@@ -57,7 +57,44 @@ In this stage we need you to modify the event to have all the required data that
 
 - Modify the data you're passing in order to have the required data `dateTime`, `postId`, `text` and `userId`
 - Enable your `handler.js` function to access the database created in **Get From Database** exercise
-- Modify your function so it can create a new **post** from the data received (HINT: Use DynamoDB DocumentClient)
+- Modify your function so it can create a new **post** from the data received (HINT: Use DynamoDB DocumentClient and update expression)
+- Verify that persistence is happening by checking logs and DynamoDB table
+
+Example of a **post**
+
+```
+
+{
+   "dateTime": 1549312452000,
+   "postId": 102030,
+   "text": "Fake post",
+   "userId": 1234
+}
+
+```
+
+---
+
+Iteration 4
+===========
+
+In this stage, we'll start the development of a second function that will take care of materializing the "timeline" of a user, whenever a post creation happens. In order to simplify the exercise let's assume that a user's posts list will be under `posts` table, whereas timeline will be a collection of `posts` from multiple users, which corresponds with the users a user follows. The list of followers will be in another table. 
+The suggested logic includes: 
+- User **A** creates a post
+- Query the list of users following user **A**
+- As user **A** updated his posts list, the users following user **A** should have their timeline updated
+- Timeline update will happen simply as adding the same post to each of the followers of **A**
+
+
+In order to achieve this, let's start with:
+- Rename current function into something more meaningful
+- Refactor code if necessary
+- Create new function that will react to event
+- Create database tables for handling followers and timeline
+- Enable your newly created function to access these new tables
+- Create the logic for getting the list of followers a user has
+- Add logic to add post to each user's timeline
+- Refactor code if necessary
 
 
 
@@ -106,6 +143,8 @@ Where `testData.json` can have the following shape
 }
 
 ```
+# Event data comes inside ´detail´
+
 # Use DynamoDB.DocumentClient
 
 ```
