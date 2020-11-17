@@ -17,12 +17,16 @@ Iteration 1
 serverless create --template aws-nodejs --path listening_lambda --name listening_lambda
 
 ```
-
+####Step 1
 - Listening Lambda
  - Modify your lambda descriptor **serverless.yml** to be able to react to a published event (Define the event yourself).
  - Modify your `handler.js` function and make sure to simply **log** something. We'll need this to check if the event was received.
  - Deploy your newly created lambda.
-
+ 
+ How are you going to test it works (manually)?
+ 
+ 
+####Step 2
 - Publish Lambda
  - Create another lambda called `publish_lambda` and prepare it for modification.
  - Modify your lambda descriptior *serverless.yml* to be able to react to a `get` http event.
@@ -82,8 +86,9 @@ Example of a **post**
 ```
 
 ---
+# HRLW
 
-Iteration 4
+Iteration 1 
 ===========
 
 In this stage, we'll start the development of a second function that will take care of materializing the "timeline" of a user, whenever a post creation happens. In order to simplify the exercise let's assume that a user's posts list will be under `posts` table, whereas timeline will be a collection of `posts` from multiple users, which corresponds with the users a user follows. The list of followers will be in another table. 
