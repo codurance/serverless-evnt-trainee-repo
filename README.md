@@ -4,18 +4,6 @@ Slides:
 https://docs.google.com/presentation/d/1ckFkQyszXuHJixhn8RP_PI8Lzoj7FK1lyKtsB7pPPYI/edit#slide=id.g74c57ff882_0_0
 
 
-
-
-Instructions
-============
-
-- Using the knowledge acquired in previous stage, start creating a new listening lambda by doing
-
-```
-serverless create --template aws-nodejs --path listening_lambda --name listening_lambda
-
-```
-
 ### Goals structure:
 - 10 minutes describing the goal and giving some tips
 - 30 minutes of trainees attempting to solve it
