@@ -74,9 +74,10 @@ Example of a **post**
 ```
 
 
-# Tips:
+# Help:
 
-## Tips:
+- Events get published but not received:
+    check the amazon region where they are published
 
 - Hello world command:
     sls create --template aws-nodejs --path myService
